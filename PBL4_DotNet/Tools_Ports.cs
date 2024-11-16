@@ -189,5 +189,10 @@ namespace PBL4_DotNet
                 richTextBox2.AppendText(text);
             }
         }
+
+        private void Tools_Ports_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
