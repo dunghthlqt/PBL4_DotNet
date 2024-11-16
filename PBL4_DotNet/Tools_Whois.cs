@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL4_DotNet
 {
-    public partial class Form1 : Form
+    public partial class Tools_Whois : UserControl
     {
-        public SplitContainer SplitContainer1 => splitContainer1;
-        public Form1()
+        public Tools_Whois()
         {
             InitializeComponent();
-            splitContainer1.IsSplitterFixed = true;
-
-            splitContainer1.Panel1.Controls.Add(new MainMenu(this));
         }
     }
 }
