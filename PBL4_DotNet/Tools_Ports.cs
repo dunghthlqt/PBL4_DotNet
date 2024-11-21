@@ -74,12 +74,11 @@ namespace PBL4_DotNet
         public async void button2_Click(object sender, EventArgs e)
         {
             _cancellationTokenSource.Cancel();
-
         }
 
         private async Task ScanCommonPorts(CancellationToken cancellationToken)
         {
-            string path = "D:\\PBL4\\PBL4_DotNet\\PBL4_DotNet\\File\\common_port.txt";
+            string path = "..\\..\\File\\CommonPort.txt";
             List<int> ports = new List<int>();
 
             using (StreamReader sr = new StreamReader(path))
