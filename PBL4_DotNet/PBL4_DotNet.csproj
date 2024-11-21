@@ -79,6 +79,12 @@
     <Compile Include="LanScan.Designer.cs">
       <DependentUpon>LanScan.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanScan_ViewResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LanScan_ViewResult.Designer.cs">
+      <DependentUpon>LanScan_ViewResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LanScan.resx">
       <DependentUpon>LanScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanScan_ViewResult.resx">
+      <DependentUpon>LanScan_ViewResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
