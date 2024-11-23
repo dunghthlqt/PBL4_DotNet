@@ -61,7 +61,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(667, 253);
+            this.dataGridView1.Size = new System.Drawing.Size(635, 253);
             this.dataGridView1.TabIndex = 3;
             // 
             // LanScan_ViewResult

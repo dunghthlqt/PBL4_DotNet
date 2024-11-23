@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace PBL4_DotNet
 {
@@ -22,6 +18,8 @@ namespace PBL4_DotNet
         private ConcurrentBag<String> connectabledevice;
         private List<DeviceInfo> DeviceInfomation;
         private String HostInfo;
+        private const int PING_TIMEOUT = 2000;
+        private const string VENDOR_FILE_PATH = "..\\..\\File\\DeviceVendor.txt";
 
         public LanScan_ViewResult(String HostInfo)
         {
@@ -29,14 +27,22 @@ namespace PBL4_DotNet
             DeviceInfomation = new List<DeviceInfo>();
             this.HostInfo = HostInfo;
             InitializeComponent();
-            InitializeUI();
+            _ = InitializeUIAsync();
         }
-        private async Task InitializeUI()
+        private async Task InitializeUIAsync()
         {
-            label2.Text = this.HostInfo;
-            await ScanDevice();
+            try
+            {
+                label2.Text = HostInfo;
+                await ScanDevicesAsync();
+                MessageBox.Show("Scan completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error during scan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        private async Task ScanDevice()
+        private async Task ScanDevicesAsync()
         {
             var tasks = new List<Task>();
             String HostIpAddress = HostInfo.Split(':')[1].Trim();
@@ -45,7 +51,7 @@ namespace PBL4_DotNet
             for (int i = 1; i <= 255; i++)
             {
                 String host = subnet + i.ToString();
-                tasks.Add(Ping(host));
+                tasks.Add(PingHostAsync(host));
             }
             await Task.WhenAll(tasks);
             tasks.Clear();
@@ -86,35 +92,33 @@ namespace PBL4_DotNet
                 }
             }
             await Task.WhenAll(tasks);
-            MessageBox.Show("Scan completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private async Task Ping(String host)
+        private async Task PingHostAsync(String host)
         {
             try
             {
                 using (Ping ping = new Ping())
                 {
-                    PingReply reply = await ping.SendPingAsync(host, 1000);
+                    PingReply reply = await ping.SendPingAsync(host, PING_TIMEOUT);
                     if (reply.Status == IPStatus.Success)
                     {
-                        Console.WriteLine(host);
                         connectabledevice.Add(host);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error pinging {host}: {ex.Message}");
+                Console.WriteLine(ex.Message);
             }
         }
         private async Task CollectDeviceInfo(String host, String MacAdress)
         {
             Console.WriteLine("Current Directory: " + Environment.CurrentDirectory);
-            var hostEntry = await Dns.GetHostEntryAsync(host);
+            var hostEntry = await Dns.GetHostEntryAsync(host); //Thiếu ổn định
             String DeviceName = hostEntry.HostName;
 
             var oui = new List<OUI>();
-            StreamReader sr = new StreamReader("..\\..\\File\\DeviceVendor.txt");
+            StreamReader sr = new StreamReader(VENDOR_FILE_PATH);
 
             String line;
             while ((line = sr.ReadLine()) != null)
