@@ -344,6 +344,7 @@ FC-11-65 : Cambium Networks Limited
 48-C3-5A : LENOVO(BEIJING)CO., LTD.
 60-70-6C : Google, Inc.
 C8-2A-DD : Google, Inc.
+7A-A9-4B : Google, Inc.
 24-09-35 : Samsung Electronics Co.,Ltd
 84-22-89 : Samsung Electronics Co.,Ltd
 08-1A-FD : Huawei Device Co., Ltd.
@@ -33851,3 +33852,4 @@ B0-18-86 : SmarDTV Corporation
 14-CA-56 : zte corporation
 6C-22-1A : AltoBeam Inc.
 D8-43-AE : Micro-Star INTL CO., LTD.
+C4-D8-D5 : Espressif Inc.

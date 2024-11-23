@@ -17,10 +17,10 @@ namespace PBL4_DotNet
         public LanScan()
         {
             InitializeComponent();
-            addInterface();
+            LoadInterface();
             splitContainer1.IsSplitterFixed = true;
         }
-        public void addInterface()
+        public void LoadInterface()
         {
             var InterfaceList = new List<Interface>();
             try 
@@ -46,10 +46,25 @@ namespace PBL4_DotNet
         }
         public async void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a network interface", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             button1.Enabled = false;
-            splitContainer1.Panel2.Controls.Clear();
-            splitContainer1.Panel2.Controls.Add(new LanScan_ViewResult(comboBox1.GetItemText(comboBox1.SelectedItem)));
-            button1.Enabled = true;
+            try
+            {
+                splitContainer1.Panel2.Controls.Clear();
+                splitContainer1.Panel2.Controls.Add(new LanScan_ViewResult(comboBox1.GetItemText(comboBox1.SelectedItem)));
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally 
+            {
+                button1.Enabled = true;
+            }
         }
     }
     public class Interface
