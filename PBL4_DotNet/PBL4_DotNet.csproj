@@ -129,12 +129,6 @@
     <Compile Include="Tools_Route.Designer.cs">
       <DependentUpon>Tools_Route.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools_Whois.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Tools_Whois.Designer.cs">
-      <DependentUpon>Tools_Whois.cs</DependentUpon>
-    </Compile>
     <Compile Include="WifiSignal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools_Route.resx">
       <DependentUpon>Tools_Route.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools_Whois.resx">
-      <DependentUpon>Tools_Whois.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WifiSignal.resx">
       <DependentUpon>WifiSignal.cs</DependentUpon>

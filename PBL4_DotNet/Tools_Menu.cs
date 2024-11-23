@@ -34,11 +34,6 @@ namespace PBL4_DotNet
             _parentControl.SplitContainer1.Panel2.Controls.Clear();
             _parentControl.SplitContainer1.Panel2.Controls.Add(new Tools_Ports());
         }
-        public void button4_Click(object sender, EventArgs e)
-        {
-            _parentControl.SplitContainer1.Panel2.Controls.Clear();
-            _parentControl.SplitContainer1.Panel2.Controls.Add(new Tools_Whois());
-        }
         public void button5_Click(object sender, EventArgs e)
         {
             _parentControl.SplitContainer1.Panel2.Controls.Clear();
