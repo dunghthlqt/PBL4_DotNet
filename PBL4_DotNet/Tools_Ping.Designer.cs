@@ -39,7 +39,7 @@
             // textBoxPing
             // 
             this.textBoxPing.Location = new System.Drawing.Point(196, 39);
-            this.textBoxPing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPing.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPing.Name = "textBoxPing";
             this.textBoxPing.Size = new System.Drawing.Size(144, 20);
             this.textBoxPing.TabIndex = 0;
@@ -57,7 +57,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(366, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 21);
             this.button1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(454, 38);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 21);
             this.button2.TabIndex = 4;
@@ -78,8 +78,9 @@
             // 
             // richTextBoxPing
             // 
+            this.richTextBoxPing.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBoxPing.Location = new System.Drawing.Point(59, 89);
-            this.richTextBoxPing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxPing.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxPing.Name = "richTextBoxPing";
             this.richTextBoxPing.Size = new System.Drawing.Size(452, 257);
             this.richTextBoxPing.TabIndex = 5;
@@ -89,7 +90,7 @@
             // 
             this.checkBoxContinuousPing.AutoSize = true;
             this.checkBoxContinuousPing.Location = new System.Drawing.Point(196, 62);
-            this.checkBoxContinuousPing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxContinuousPing.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxContinuousPing.Name = "checkBoxContinuousPing";
             this.checkBoxContinuousPing.Size = new System.Drawing.Size(100, 17);
             this.checkBoxContinuousPing.TabIndex = 6;
@@ -100,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.checkBoxContinuousPing);
             this.Controls.Add(this.richTextBoxPing);
             this.Controls.Add(this.button2);

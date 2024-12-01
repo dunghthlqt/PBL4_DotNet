@@ -18,6 +18,7 @@ namespace PBL4_DotNet
         private ConcurrentBag<String> connectabledevice;
         private List<DeviceInfo> DeviceInfomation;
         private String HostInfo;
+        private int DeviceCount = 0;
         private const int PING_TIMEOUT = 2000;
         private const string VENDOR_FILE_PATH = "..\\..\\File\\DeviceVendor.txt";
 
@@ -33,7 +34,7 @@ namespace PBL4_DotNet
         {
             try
             {
-                label2.Text = HostInfo;
+                label2.Text = HostInfo.Split('.')[0] + "." + HostInfo.Split('.')[1] + "." + HostInfo.Split('.')[2] + ".0";
                 await ScanDevicesAsync();
                 MessageBox.Show("Scan completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -44,6 +45,7 @@ namespace PBL4_DotNet
         }
         private async Task ScanDevicesAsync()
         {
+            DeviceCount = 0;
             var tasks = new List<Task>();
             String HostIpAddress = HostInfo.Split(':')[1].Trim();
 
@@ -52,9 +54,11 @@ namespace PBL4_DotNet
             {
                 String host = subnet + i.ToString();
                 tasks.Add(PingHostAsync(host));
+                //tasks.Add(DiscoverHostAsync(host));
             }
             await Task.WhenAll(tasks);
             tasks.Clear();
+            UpdateProgress(25);
 
             String sMacAddress = string.Empty;
             NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
@@ -69,41 +73,44 @@ namespace PBL4_DotNet
                     break;
                 }
             }
+            UpdateProgress(50);
+
             String MacAddress = String.Join("-", Enumerable.Range(0, 6).Select(i => sMacAddress.Substring(i * 2, 2))).ToLower();
             List<ArpItem> arplist = CollectArpResult(subnet);
             arplist.Add(new ArpItem(HostIpAddress, MacAddress));
+            UpdateProgress(75);
 
             int scannedDevice = 0;
             foreach (var device in connectabledevice)
             {
-                Console.WriteLine("Thread: " +  device);
                 scannedDevice += 1;
-                UpdateProgress(scannedDevice * 100 / connectabledevice.Count);
                 foreach (var arp in arplist)
                 {
 
                     if (arp.Ip.Trim().Equals(device.Trim()))
                     {
-                        Console.WriteLine("True");
                         scannedDevice += 1;
-                        UpdateProgress(scannedDevice * 100 / connectabledevice.Count);
+                        DeviceCount += 1;
                         tasks.Add(CollectDeviceInfo(device, arp.MacAddress));
                     }
                 }
             }
             await Task.WhenAll(tasks);
+            UpdateProgress(100);
+            label2.Text = HostInfo.Split('.')[0] + "." + HostInfo.Split('.')[1] + "." + HostInfo.Split('.')[2] + ".0 (" + DeviceCount + ")";
         }
-        private async Task PingHostAsync(String host)
+
+        private async Task PingHostAsync(String host) //Thử gửi Arp request tới tất cả các Ip trong mạng
         {
             try
             {
                 using (Ping ping = new Ping())
                 {
                     PingReply reply = await ping.SendPingAsync(host, PING_TIMEOUT);
-                    if (reply.Status == IPStatus.Success)
-                    {
+                    //if (reply.Status == IPStatus.Success)
+                    //{
                         connectabledevice.Add(host);
-                    }
+                    //}
                 }
             }
             catch (Exception ex)
@@ -111,11 +118,135 @@ namespace PBL4_DotNet
                 Console.WriteLine(ex.Message);
             }
         }
+        //private async Task DiscoverHostAsync(String host)
+        //{
+        //    // Thử nhiều phương thức khác nhau
+        //    bool discovered = false;
+        //    // Phương thức 1: Ping 
+        //    discovered = await TryPingHostAsync(host) ? true : false;
+
+        //    // Phương thức 2: Quét cổng thông dụng
+        //    if(!discovered)
+        //    {
+        //        discovered = await TryScanCommonPortsAsync(host) ? true : false;
+        //    }
+        //    // Phương thức 3: Tra cứu DNS
+        //    if (!discovered)
+        //    {
+        //        discovered = await TryReverseDNSLookupAsync(host) ? true : false;
+        //    }
+
+        //    if (discovered)
+        //    {
+        //        Console.WriteLine("Alo");
+        //        connectabledevice.Add(host);
+        //        Console.WriteLine(host);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Blo");
+        //    }
+        //}
+        //private async Task<bool> TryPingHostAsync(String host)
+        //{
+        //    try
+        //    {
+        //        using (Ping ping = new Ping())
+        //        {
+        //            PingReply reply = await ping.SendPingAsync(host, PING_TIMEOUT);
+        //            return reply.Status == IPStatus.Success;
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
+        //private async Task<bool> TryScanCommonPortsAsync(String host)
+        //{
+        //    Console.WriteLine("Scanning" + host);
+        //    int[] commonPorts = { 80, 443, 22, 21, 25, 3389 }; // HTTP, HTTPS, SSH, FTP, SMTP, RDP
+        //    foreach (int port in commonPorts)
+        //    {
+        //        if (await IsPortOpenAsync(host, port))
+        //        {
+        //            // Thực hiện ARP request để cập nhật ARP table
+        //            await SendArpRequest(host);
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+        //private async Task<bool> IsPortOpenAsync(string host, int port)
+        //{
+        //    using (TcpClient tcpClient = new TcpClient())
+        //    {
+        //        try
+        //        {
+        //            var connectTask = tcpClient.ConnectAsync(host, port);
+        //            if (await Task.WhenAny(connectTask, Task.Delay(1000)) == connectTask)
+        //            {
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //        catch
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //}
+        //private async Task<bool> TryReverseDNSLookupAsync(String host)
+        //{
+        //    try
+        //    {
+        //        var hostEntry = await Dns.GetHostEntryAsync(host);
+
+        //        // Thực hiện ARP request khi DNS lookup thành công
+        //        await SendArpRequest(host);
+
+        //        return true;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
+        //private async Task SendArpRequest(string host)
+        //{
+        //    try
+        //    {
+        //        // Sử dụng System.Net.NetworkInformation để gửi ARP request
+        //        IPAddress ipAddress = IPAddress.Parse(host);
+
+        //        // Gửi ping để kích hoạt ARP resolution (không nhất thiết phải chờ phản hồi)
+        //        using (Ping ping = new Ping())
+        //        {
+        //            await ping.SendPingAsync(ipAddress, 1000);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Ghi log nếu có lỗi
+        //        Console.WriteLine($"ARP request error for {host}: {ex.Message}");
+        //    }
+        //}
+
         private async Task CollectDeviceInfo(String host, String MacAdress)
         {
-            Console.WriteLine("Current Directory: " + Environment.CurrentDirectory);
-            var hostEntry = await Dns.GetHostEntryAsync(host); //Thiếu ổn định
-            String DeviceName = hostEntry.HostName;
+            String DeviceName = "";
+            try
+            {
+                var hostEntry = await Dns.GetHostEntryAsync(host); //Thiếu ổn định
+                DeviceName = hostEntry.HostName;
+            }
+            catch
+            {
+                DeviceName = "N/A";
+            }
 
             var oui = new List<OUI>();
             StreamReader sr = new StreamReader(VENDOR_FILE_PATH);
@@ -132,7 +263,7 @@ namespace PBL4_DotNet
                 String Mac = o.MAC.Split('-')[0] + "-" + o.MAC.Split('-')[1] + "-" + o.MAC.Split('-')[2];
                 if (Mac.Trim().ToLower().Equals(VendorMac.Trim().ToLower()))
                 {
-                    DisplayDevices(host, DeviceName, MacAdress, o.Vendor); 
+                    DisplayDevices(host, DeviceName, MacAdress, o.Vendor);
                     return;
                 }
             }
@@ -169,10 +300,7 @@ namespace PBL4_DotNet
         }
         private void DisplayDevices(String ipAddress, String MacAddress, String DeviceName, String DeviceVendor)
         {
-            Console.WriteLine("Chck");
             DeviceInfo device = new DeviceInfo(ipAddress, DeviceName, MacAddress, DeviceVendor);
-            Console.WriteLine(device.ipAddress);
-            Console.WriteLine(device.MacAddress);
             DeviceInfomation.Add(device);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = DeviceInfomation;

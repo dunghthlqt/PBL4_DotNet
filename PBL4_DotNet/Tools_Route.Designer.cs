@@ -70,6 +70,7 @@
             // 
             // richTextBoxRoute
             // 
+            this.richTextBoxRoute.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBoxRoute.Location = new System.Drawing.Point(95, 85);
             this.richTextBoxRoute.Name = "richTextBoxRoute";
             this.richTextBoxRoute.Size = new System.Drawing.Size(474, 237);
@@ -90,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBoxRoute);
             this.Controls.Add(this.buttonStart);
