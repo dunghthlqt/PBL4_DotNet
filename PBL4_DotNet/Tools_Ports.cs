@@ -132,7 +132,7 @@ namespace PBL4_DotNet
                 UpdateProgress(processedPorts * 100 / totalPorts);
 
                 // Limit concurrent connections
-                if (tasks.Count >= 10)
+                if (tasks.Count >= 50)
                 {
                     await Task.WhenAny(tasks);
                     tasks.RemoveAll(t => t.IsCompleted);

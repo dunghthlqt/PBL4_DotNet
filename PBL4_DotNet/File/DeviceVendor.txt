@@ -915,7 +915,7 @@ DC-21-5C : Intel Corporate
 18-52-07 : Sichuan Tianyi Comheart Telecom Co.,LTD
 E0-C6-3C : Sichuan Tianyi Comheart Telecom Co.,LTD
 C8-7B-23 : Bose Corporation
-A8-93-4A : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+A8-93-4A : Chongqing Fugui Electronics Co.,Ltd.
 D0-47-C1 : Elma Electronic AG
 9C-1C-37 : AltoBeam (China) Inc.
 34-AB-95 : Espressif Inc.
@@ -1222,7 +1222,7 @@ FC-73-FB : HUAWEI TECHNOLOGIES CO.,LTD
 50-FB-19 : CHIPSEA TECHNOLOGIES (SHENZHEN) CORP.
 94-08-C7 : Huawei Device Co., Ltd.
 BC-A9-93 : Cambium Networks Limited
-A4-97-B1 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+A4-97-B1 : Chongqing Fugui Electronics Co.,Ltd.
 D4-40-D0 : OCOSMOS Co., LTD
 DC-D9-AE : Nokia Shanghai Bell Co., Ltd.
 C4-36-6C : LG Innotek
@@ -1370,7 +1370,7 @@ F0-5C-D5 : Apple, Inc.
 3C-DA-6D : Tiandy Technologies CO.,LTD
 A4-FA-76 : New H3C Technologies Co., Ltd
 3C-FA-D3 : IEEE Registration Authority
-5C-BA-EF : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+5C-BA-EF : Chongqing Fugui Electronics Co.,Ltd.
 00-0A-DB : Trilliant
 04-45-A1 : NIRIT- Xinwei  Telecom Technology Co., Ltd.
 80-20-E1 : BVBA DPTechnics
@@ -1474,7 +1474,7 @@ CC-6A-10 : The Chamberlain Group, Inc
 B8-87-C6 : Prudential Technology co.,LTD
 FC-1C-A1 : Nokia
 54-A4-93 : IEEE Registration Authority
-8C-C8-4B : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+8C-C8-4B : Chongqing Fugui Electronics Co.,Ltd.
 7C-48-B2 : Vida Resources Lte Ltd
 9C-69-D1 : HUAWEI TECHNOLOGIES CO.,LTD
 04-0E-3C : HP Inc.
@@ -1564,7 +1564,7 @@ D4-62-EA : HUAWEI TECHNOLOGIES CO.,LTD
 6C-5E-3B : Cisco Systems, Inc
 14-42-FC : Texas Instruments
 AC-5D-5C : FN-LINK TECHNOLOGY LIMITED
-E8-6F-38 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+E8-6F-38 : Chongqing Fugui Electronics Co.,Ltd.
 08-B3-AF : vivo Mobile Communication Co., Ltd.
 30-86-2D : Arista Network, Inc.
 08-68-8D : New H3C Technologies Co., Ltd
@@ -1616,7 +1616,7 @@ C8-EA-F8 : zte corporation
 88-F8-72 : HUAWEI TECHNOLOGIES CO.,LTD
 EC-56-23 : HUAWEI TECHNOLOGIES CO.,LTD
 54-86-BC : Cisco Systems, Inc
-40-23-43 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+40-23-43 : Chongqing Fugui Electronics Co.,Ltd.
 00-21-B7 : LEXMARK INTERNATIONAL, INC.
 60-92-F5 : ARRIS Group, Inc.
 00-22-AF : Safety Vision, LLC
@@ -7980,7 +7980,7 @@ C0-B8-E6 : Ruijie Networks Co.,LTD
 1C-FE-2B : Amazon Technologies Inc.
 A4-AE-12 : Hon Hai Precision Industry Co., Ltd.
 9C-9D-7E : Beijing Xiaomi Mobile Software Co., Ltd
-74-12-B3 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+74-12-B3 : Chongqing Fugui Electronics Co.,Ltd.
 94-47-B0 : BEIJING ESWIN COMPUTING TECHNOLOGY CO., LTD
 E4-5A-D4 : Eltex Enterprise Ltd.
 84-22-5E : SHENZHEN TECHNEWCHIP TECHNOLOGY CO.,LTD.
@@ -8010,7 +8010,7 @@ B4-60-ED : Beijing Xiaomi Mobile Software Co., Ltd
 C0-18-50 : Quanta Computer Inc.
 44-27-F3 : 70mai Co.,Ltd.
 30-CC-21 : zte corporation
-64-6C-80 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+64-6C-80 : Chongqing Fugui Electronics Co.,Ltd.
 00-26-C0 : EnergyHub
 80-EA-CA : Dialog Semiconductor Hellas SA
 04-7D-7B : Quanta Computer Inc.
@@ -8283,7 +8283,7 @@ E8-3F-67 : Huawei Device Co., Ltd.
 40-77-A9 : New H3C Technologies Co., Ltd
 C8-F3-19 : LG Electronics (Mobile Communications)
 04-5E-A4 : SHENZHEN NETIS TECHNOLOGY CO.,LTD
-1C-BF-C0 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+1C-BF-C0 : Chongqing Fugui Electronics Co.,Ltd.
 64-69-4E : Texas Instruments
 F8-33-31 : Texas Instruments
 B4-EC-F2 : Shanghai Listent Medical Tech Co., Ltd.
@@ -8605,7 +8605,7 @@ B4-C6-2E : Molex CMS
 B8-25-9A : Thalmic Labs 
 FC-BE-7B : vivo Mobile Communication Co., Ltd.
 B4-0F-B3 : vivo Mobile Communication Co., Ltd.
-EC-5C-68 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+EC-5C-68 : Chongqing Fugui Electronics Co.,Ltd.
 28-25-36 : SHENZHEN HOLATEK CO.,LTD
 B8-A1-75 : Roku, Inc.
 18-2A-44 : HIROSE ELECTRONIC SYSTEM
@@ -14506,7 +14506,7 @@ DC-15-C8 : AVM Audiovisuelles Marketing und Computersysteme GmbH
 F8-AA-3F : DWnet Technologies(Suzhou) Corporation
 0C-CF-89 : SHENZHEN BILIAN ELECTRONIC CO.，LTD
 AC-5A-FC : Intel Corporate
-C8-94-02 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+C8-94-02 : Chongqing Fugui Electronics Co.,Ltd.
 7C-B9-4C : Bouffalo Lab (Nanjing) Co., Ltd.
 0C-8C-69 : Shenzhen elink smart Co., ltd
 D8-BB-C1 : Micro-Star INTL CO., LTD.
@@ -14531,7 +14531,7 @@ BC-9D-42 : SHENZHEN RF-LINK TECHNOLOGY CO.,LTD.
 24-0B-88 : Taicang T&W Electronics
 0C-93-8F : GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP.,LTD
 34-8A-12 : Aruba, a Hewlett Packard Enterprise Company
-B0-68-E6 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+B0-68-E6 : Chongqing Fugui Electronics Co.,Ltd.
 BC-D7-CE : China Mobile (Hangzhou) Information Technology Co., Ltd.
 C4-39-60 : GD Midea Air-Conditioning Equipment Co.,Ltd.
 44-B6-BE : Cisco Systems, Inc
@@ -14554,7 +14554,7 @@ D8-09-D6 : ZEXELON CO., LTD.
 A0-41-2D : Lansen Systems AB
 4C-75-25 : Espressif Inc.
 74-04-F0 : Mobiwire Mobiles (NingBo) Co., LTD
-B4-B5-B6 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+B4-B5-B6 : Chongqing Fugui Electronics Co.,Ltd.
 04-7A-0B : Beijing Xiaomi Electronics Co., Ltd.
 90-0F-0C : CLOUD NETWORK TECHNOLOGY SINGAPORE PTE. LTD.
 2C-9A-A4 : Eolo SpA
@@ -14653,7 +14653,7 @@ DC-B7-FC : Alps Electric (Ireland) Ltd
 AC-FA-A5 : digitron
 14-1B-30 : Shenzhen Yipingfang Network Technology Co., Ltd.
 B8-47-7A : Dasan Electron Co., Ltd.
-6C-AD-AD : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+6C-AD-AD : Chongqing Fugui Electronics Co.,Ltd.
 80-03-84 : Ruckus Wireless
 D8-37-3B : Shenzhen Jingxun Software Telecommunication Technology Co.,Ltd
 A8-30-1C : Qingdao Intelligent&Precise Electronics Co.,Ltd.
@@ -14794,7 +14794,7 @@ E4-3D-1A : Broadcom Limited
 80-2D-BF : Cisco Systems, Inc
 FC-60-9B : New H3C Technologies Co., Ltd
 DC-50-3A : Nanjing Ticom Tech Co., Ltd.
-18-47-3D : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+18-47-3D : Chongqing Fugui Electronics Co.,Ltd.
 94-25-33 : HUAWEI TECHNOLOGIES CO.,LTD
 44-F4-E7 : Cohesity Inc
 24-4B-FE : ASUSTek COMPUTER INC.
@@ -14924,7 +14924,7 @@ B0-B1-94 : zte corporation
 80-7B-3E : Samsung Electronics Co.,Ltd
 F8-F1-E6 : Samsung Electronics Co.,Ltd
 5C-E1-76 : Cisco Systems, Inc
-28-CD-C4 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+28-CD-C4 : Chongqing Fugui Electronics Co.,Ltd.
 E8-D8-D1 : HP Inc.
 48-EB-62 : Murata Manufacturing Co., Ltd.
 50-DE-19 : IEEE Registration Authority
@@ -15215,7 +15215,7 @@ AC-71-0C : China Mobile Group Device Co.,Ltd.
 00-5B-94 : Apple, Inc.
 E0-89-7E : Apple, Inc.
 7C-57-3C : Aruba, a Hewlett Packard Enterprise Company
-AC-D5-64 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+AC-D5-64 : Chongqing Fugui Electronics Co.,Ltd.
 94-D0-75 : CIS Crypto
 28-B4-FB : Sprocomm Technologies CO.,LTD.
 C0-53-36 : Beijing National Railway Research & Design Institute of Signal & Communication Group Co..Ltd.
@@ -20790,7 +20790,7 @@ E4-90-2A : HUAWEI TECHNOLOGIES CO.,LTD
 18-86-3A : DIGITAL ART SYSTEM
 C8-D6-B7 : Solidigm Technology
 F0-87-7F : Magnetar Technology Shenzhen Co., LTD.
-5C-FB-3A : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+5C-FB-3A : Chongqing Fugui Electronics Co.,Ltd.
 D0-4E-50 : Mobiwire Mobiles (NingBo) Co., LTD
 F4-6C-68 : Wistron Neweb Corporation
 84-93-B2 : zte corporation
@@ -21175,7 +21175,7 @@ A8-67-1E : RATP
 38-65-B2 : Apple, Inc.
 D8-DE-3A : Apple, Inc.
 20-53-83 : HUAWEI TECHNOLOGIES CO.,LTD
-4C-D5-77 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+4C-D5-77 : Chongqing Fugui Electronics Co.,Ltd.
 64-ED-57 : ARRIS Group, Inc.
 EC-08-E5 : Motorola Mobility LLC, a Lenovo Company
 80-CC-9C : NETGEAR
@@ -21444,7 +21444,7 @@ AC-F8-5C : Chengdu Higon Integrated Circuit Design Co,. Ltd.
 1C-90-BE : Ericsson AB
 34-2B-70 : Arris
 4C-02-20 : Xiaomi Communications Co Ltd
-D4-1B-81 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+D4-1B-81 : Chongqing Fugui Electronics Co.,Ltd.
 F4-0B-9F : CIG SHANGHAI CO LTD
 A0-77-51 : ASMedia Technology Inc.
 30-56-84 : SHENZHEN YUNJI INTELLIGENT TECHNOLOGY CO.,LTD
@@ -21813,7 +21813,7 @@ E8-2E-0C : NETINT Technologies Inc.
 5C-3A-3D : zte corporation
 7C-A1-AE : Apple, Inc.
 30-FD-65 : HUAWEI TECHNOLOGIES CO.,LTD
-5C-3A-45 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+5C-3A-45 : Chongqing Fugui Electronics Co.,Ltd.
 40-4C-77 : ARRIS Group, Inc.
 10-08-2C : Texas Instruments
 A8-97-CD : ARRIS Group, Inc.
@@ -21873,7 +21873,7 @@ B4-7C-59 : Jiangsu Hengxin Technology Co.,Ltd.
 30-0D-9E : Ruijie Networks Co.,LTD
 9C-93-B0 : Megatronix (Beijing) Technology Co., Ltd.
 B8-1F-5E : Apption Labs Limited
-D8-12-65 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+D8-12-65 : Chongqing Fugui Electronics Co.,Ltd.
 8C-3A-7E : Universal Electronics, Inc.
 20-85-93 : IEEE Registration Authority
 EC-FA-5C : Beijing Xiaomi Electronics Co., Ltd.
@@ -28626,7 +28626,7 @@ A0-41-47 : Huawei Device Co., Ltd.
 04-ED-33 : Intel Corporate
 7C-C9-26 : Wuhan GreeNet Information Service Co.,Ltd.
 68-07-0A : TPVision Europe B.V
-4C-EB-BD : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+4C-EB-BD : Chongqing Fugui Electronics Co.,Ltd.
 70-87-9E : Beken Corporation
 04-4A-6C : HUAWEI TECHNOLOGIES CO.,LTD
 38-FB-14 : HUAWEI TECHNOLOGIES CO.,LTD
@@ -28698,7 +28698,7 @@ B4-DC-09 : Guangzhou Dawei Communication Co.,Ltd
 68-A0-3E : HUAWEI TECHNOLOGIES CO.,LTD
 B8-C3-85 : HUAWEI TECHNOLOGIES CO.,LTD
 C8-D6-9D : Arab International Optronics
-40-5B-D8 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+40-5B-D8 : Chongqing Fugui Electronics Co.,Ltd.
 B8-91-C9 : Handreamnet
 C8-A7-76 : HUAWEI TECHNOLOGIES CO.,LTD
 A4-00-E2 : HUAWEI TECHNOLOGIES CO.,LTD
@@ -28834,7 +28834,7 @@ A4-17-91 : Shenzhen Decnta Technology Co.,LTD.
 24-DE-C6 : Aruba, a Hewlett Packard Enterprise Company
 A4-19-08 : Fiberhome Telecommunication Technologies Co.,LTD
 00-14-A5 : Gemtek Technology Co., Ltd.
-C0-B5-D7 : CHONGQING FUGUI ELECTRONICS CO.,LTD.
+C0-B5-D7 : Chongqing Fugui Electronics Co.,Ltd.
 10-8E-BA : Molekule
 80-D3-36 : CERN
 64-25-5E : Observint Technologies, Inc.
@@ -33853,3 +33853,4 @@ B0-18-86 : SmarDTV Corporation
 6C-22-1A : AltoBeam Inc.
 D8-43-AE : Micro-Star INTL CO., LTD.
 C4-D8-D5 : Espressif Inc.
+42-CB-C4 : Google Inc.
