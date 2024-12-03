@@ -19,7 +19,7 @@ namespace PBL4_DotNet
         private List<DeviceInfo> DeviceInfomation;
         private String HostInfo;
         private int DeviceCount = 0;
-        private const int PING_TIMEOUT = 2000;
+        private const int PING_TIMEOUT = 5000;
         private const string VENDOR_FILE_PATH = "..\\..\\File\\DeviceVendor.txt";
 
         public LanScan_ViewResult(String HostInfo)
@@ -48,13 +48,15 @@ namespace PBL4_DotNet
             DeviceCount = 0;
             var tasks = new List<Task>();
             String HostIpAddress = HostInfo.Split(':')[1].Trim();
+            ClearArpCache();
 
             String subnet = HostIpAddress.Split('.')[0].Trim() + "." + HostIpAddress.Split('.')[1].Trim() + "." + HostIpAddress.Split('.')[2].Trim() + ".";
-            for (int i = 1; i <= 255; i++)
+            for (int i = 0; i <= 255; i++)
             {
                 String host = subnet + i.ToString();
                 tasks.Add(PingHostAsync(host));
                 //tasks.Add(DiscoverHostAsync(host));
+                //await PingHostAsync(host);
             }
             await Task.WhenAll(tasks);
             tasks.Clear();
@@ -293,6 +295,18 @@ namespace PBL4_DotNet
                              MacAddress = item[1],
                          };
             return result.ToList();
+        }
+        private void ClearArpCache()
+        {
+            using (Process process = Process.Start(new ProcessStartInfo("arp", "-d *")
+            {
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                RedirectStandardOutput = true
+            })) 
+            { 
+                process.WaitForExit(); 
+            }
         }
         private void UpdateProgress(int value)
         {

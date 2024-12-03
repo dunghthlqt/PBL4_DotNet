@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL4_DotNet
 {
-    public partial class WifiSignal : UserControl
+    public partial class WifiSignal_ViewResult : UserControl
     {
-        public WifiSignal()
+        public WifiSignal_ViewResult()
         {
             InitializeComponent();
-            splitContainer1.IsSplitterFixed = true;
-            splitContainer1.Panel2.Controls.Add(new WifiSignal_ViewResult());
         }
     }
 }
