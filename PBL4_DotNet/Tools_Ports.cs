@@ -17,10 +17,15 @@ namespace PBL4_DotNet
     public partial class Tools_Ports : UserControl
     {
         private CancellationTokenSource _cancellationTokenSource;
+        private List<Port> PortDescription;
+        private List<Port> FoundPort;
+        private const string PORT_DESCRIPTION_PATH = "..\\..\\File\\PortDescription.txt";
 
         public Tools_Ports()
         {
             InitializeComponent();
+            PortDescription = new List<Port>();
+            FoundPort = new List<Port>();
             comboBox1.Items.Add("Common");
             comboBox1.Items.Add("All");
             comboBox1.SelectedIndex = 0;
@@ -33,9 +38,11 @@ namespace PBL4_DotNet
             {
                 button1.Enabled = false;
                 button2.Enabled = true;
-                richTextBox2.Clear();
                 progressBar1.Value = 0;
+                dataGridView1.DataSource = null;
+                FoundPort.Clear();
 
+                PortDecriptionCollect();
                 IPAddress ipAddress = IPAddress.Parse(textBox1.Text);
                 string mode = comboBox1.SelectedItem.ToString();
 
@@ -148,10 +155,11 @@ namespace PBL4_DotNet
             {
                 using (var tcp = new TcpClient())
                 {
-                    var connectTask = tcp.ConnectAsync(textBox1.Text, port);
+                    IPAddress ip = IPAddress.Parse(textBox1.Text);
+                    var connectTask = tcp.ConnectAsync(ip, port);
                     if (await Task.WhenAny(connectTask, Task.Delay(1000)) == connectTask)
                     {
-                        UpdateResult($"{port} is open\n");
+                        UpdateResult(port);
                     }
                 }
             }
@@ -175,18 +183,46 @@ namespace PBL4_DotNet
             }
         }
 
-        private void UpdateResult(string text)
+        private void UpdateResult(int port)
         {
-            if (InvokeRequired)
+            Port foundPort = new Port(port, DecriptionFind(port));
+            Console.WriteLine(foundPort.PortNumber);
+            FoundPort.Add(foundPort);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = FoundPort;
+        }
+        private String DecriptionFind(int port)
+        {
+            String description = "";
+            for(int i = 0; i < PortDescription.Count(); i++)
             {
-                this.Invoke((MethodInvoker)delegate {
-                    richTextBox2.AppendText(text);
-                });
+                if (PortDescription[i].PortNumber == port)
+                {
+                    description = PortDescription[i].Description;
+                    break;
+                }
             }
-            else
+            return description;
+        }
+        private void PortDecriptionCollect()
+        {
+            StreamReader reader = new StreamReader(PORT_DESCRIPTION_PATH);
+            String line;
+            while((line = reader.ReadLine()) != null)
             {
-                richTextBox2.AppendText(text);
+                Port port = new Port(Int32.Parse(line.Split('-')[0].Trim()), line.Split('-')[1].Trim());
+                PortDescription.Add(port);
             }
+        }
+    }
+    public class Port
+    {
+        public int PortNumber { get; set; }
+        public String Description { get; set; }
+        public Port(int PortNumber, String Description) 
+        {
+            this.PortNumber = PortNumber;
+            this.Description = Description;
         }
     }
 }
